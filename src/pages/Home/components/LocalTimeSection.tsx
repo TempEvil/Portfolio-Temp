@@ -1,4 +1,3 @@
-import moment from "moment";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Box, Flex, HStack, Text } from "@chakra-ui/react";
@@ -6,6 +5,8 @@ import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 import { ContainerHoverStyle } from "@/app/styles/style";
 // Icon
 import { LuMapPin, LuTimer } from "react-icons/lu";
+import i18next from "i18next";
+import { formatDate, formatTime } from "@/shared/utils/translate/momentWithLocale";
 
 const LocalTimeSection = () => {
   const { t } = useTranslation();
@@ -45,11 +46,11 @@ const LocalTimeSection = () => {
           <Flex direction="column">
             {/* Main Time Display */}
             <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" lineHeight={1.1}>
-              {moment(currentTime).format("HH:mm:ss A")}
+              {formatTime(currentTime, "hh:mm:ss A", i18next.language)}
             </Text>
             {/* Full Date */}
             <Text fontSize="sm" color="theme.textSubtle">
-              {moment(currentTime).format("ddd, DD MMM YYYY")}
+              {i18next.language === "km" ? formatDate(currentTime, "dddd, DD MMM YYYY", i18next.language) : formatDate(currentTime, "ddd, DD MMM YYYY", i18next.language)}
             </Text>
           </Flex>
 

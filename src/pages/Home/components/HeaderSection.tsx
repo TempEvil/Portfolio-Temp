@@ -155,7 +155,7 @@ const HeaderSection = () => {
                 aria-pressed={currentLng === "km"}
                 onClick={() => handleChangeLanguage("km")}
                 bgColor={currentLng === "km" ? "theme.accent" : undefined}
-                color={currentLng === "km" ? "white" : undefined}
+                color={currentLng === "km" ? "theme.accentForeground" : undefined}
                 borderColor={currentLng === "km" ? "theme.accent" : undefined}
                 _hover={{
                   bgColor: currentLng === "km" ? "theme.accent" : undefined,
@@ -172,7 +172,7 @@ const HeaderSection = () => {
                 aria-pressed={currentLng === "en"}
                 onClick={() => handleChangeLanguage("en")}
                 bgColor={currentLng === "en" ? "theme.accent" : undefined}
-                color={currentLng === "en" ? "white" : undefined}
+                color={currentLng === "en" ? "theme.accentForeground" : undefined}
                 borderColor={currentLng === "en" ? "theme.accent" : undefined}
                 _hover={{
                   bgColor: currentLng === "en" ? "theme.accent" : undefined,
@@ -231,7 +231,7 @@ const HeaderSection = () => {
             aria-pressed={currentLng === "km"}
             onClick={() => handleChangeLanguage("km")}
             bgColor={currentLng === "km" ? "theme.accent" : undefined}
-            color={currentLng === "km" ? "white" : undefined}
+            color={currentLng === "km" ? "theme.accentForeground" : undefined}
             borderColor={currentLng === "km" ? "theme.accent" : undefined}
             size="xs"
             _hover={{
@@ -250,7 +250,7 @@ const HeaderSection = () => {
             aria-pressed={currentLng === "en"}
             onClick={() => handleChangeLanguage("en")}
             bgColor={currentLng === "en" ? "theme.accent" : undefined}
-            color={currentLng === "en" ? "white" : undefined}
+            color={currentLng === "en" ? "theme.accentForeground" : undefined}
             borderColor={currentLng === "en" ? "theme.accent" : undefined}
             size="xs"
             _hover={{

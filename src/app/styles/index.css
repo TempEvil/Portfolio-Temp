@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid red; */
 }
 
 html {
@@ -108,11 +107,11 @@ h6 {
 ::-webkit-scrollbar-track {
   width: 6px;
   height: 4px;
-  background: #ccc;
+  background: var(--chakra-colors-theme-bg-subtle);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background: gray;
+  background: var(--chakra-colors-theme-text-muted);
   border-radius: 24px;
 }
 

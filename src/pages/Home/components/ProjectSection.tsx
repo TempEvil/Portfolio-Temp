@@ -34,7 +34,7 @@ const ProjectSection = () => {
           className="group"
           cursor="pointer"
           onClick={() => navigate("/projects")}
-          _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
+          _focusVisible={{ outline: "2px solid", outlineColor: "theme.borderFocus", rounded: "sm" }}
         >
           <Text>{t("View All")}</Text>
           <Box
@@ -61,7 +61,7 @@ const ProjectSection = () => {
                 rounded="md"
                 overflow="hidden"
                 onClick={() => navigate(`/projects/detail?name=${slugConvertor(project.name)}`)}
-                _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
+                _focusVisible={{ outline: "2px solid", outlineColor: "theme.borderFocus", rounded: "sm" }}
               >
                 <Image
                   src={project.image}
@@ -101,7 +101,7 @@ const ProjectSection = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                       }}
-                      _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
+                      _focusVisible={{ outline: "2px solid", outlineColor: "theme.borderFocus", rounded: "sm" }}
                     >
                       <Flex
                         alignItems="center"
@@ -129,7 +129,7 @@ const ProjectSection = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                       }}
-                      _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
+                      _focusVisible={{ outline: "2px solid", outlineColor: "theme.borderFocus", rounded: "sm" }}
                     >
                       <Flex
                         alignItems="center"

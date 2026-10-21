@@ -48,7 +48,7 @@ const GetInTouchSection = () => {
     <Flex {...ContainerHoverStyle}>
       {/* Header */}
       <Heading fontSize="2xl">
-        {t("Let's work")} <Span color="gray.400">{t("together.")}</Span>
+        {t("Let's work")} <Span color="theme.textMuted">{t("together.")}</Span>
       </Heading>
       {/* Content */}
       <SimpleGrid columns={12} gap="1.5rem">

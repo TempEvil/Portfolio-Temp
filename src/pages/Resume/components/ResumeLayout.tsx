@@ -41,7 +41,8 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
       height="297mm"
       borderRadius="md"
       boxShadow={printRef ? "sm" : "2xl"}
-      border={printRef ? "1px solid #eee" : "none"}
+      border={printRef ? "1px solid" : "none"}
+      borderColor="theme.border"
     >
       {/* Left Section */}
       <VStack
@@ -63,12 +64,12 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
           zIndex={9999}
           boxSize="30px"
           fontSize="1.25rem"
-          color="#fff"
+          color="theme.resumeText"
           cursor="pointer"
           rounded="full"
           display={printRef ? "none" : "flex"}
-          _hover={{ bgColor: "gray.100", color: "#000" }}
-          _active={{ bgColor: "gray.100", color: "#000" }}
+          _hover={{ bgColor: "theme.bgHover", color: "theme.text" }}
+          _active={{ bgColor: "theme.bgHover", color: "theme.text" }}
           transition="all 0.15s"
           onClick={() => navigate("/")}
         >
@@ -79,7 +80,9 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
           height="40mm"
           aspectRatio="square"
           src={profile}
-          border="4px solid white"
+          borderWidth="4px"
+          borderStyle="solid"
+          borderColor="theme.resumeText"
           borderRadius="50%"
           marginTop="2"
           boxShadow="lg"
@@ -87,8 +90,8 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
         />
         {/* About Me */}
         <VStack width="100%" align="start" marginTop="3">
-          <Text color="white">{t("ABOUT ME")}</Text>
-          <Text color="white" fontSize="xs">
+          <Text color="theme.resumeText">{t("ABOUT ME")}</Text>
+          <Text color="theme.resumeText" fontSize="xs">
             {t(personalData.about_me)}
           </Text>
         </VStack>
@@ -96,13 +99,13 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
         {/* Links */}
         {personalData.public_link.length > 0 && (
           <VStack width="100%" align="start" marginTop="3" paddingRight={5}>
-            <Text color="white">{t("LINKS")}</Text>
+            <Text color="theme.resumeText">{t("LINKS")}</Text>
             <List.Root marginLeft="5">
               {personalData.public_link.map((link: public_link, idx: number) => (
                 <List.Item key={idx}>
                   <Tooltip content={link.url} positioning={{ placement: "right" }} openDelay={0} closeDelay={100}>
                     <Link
-                      color="white"
+                      color="theme.resumeText"
                       fontSize={printRef ? "xs" : "sm"}
                       href={link.url}
                       target="_blank"
@@ -120,11 +123,11 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
         {/* Hobbies */}
         {personalData.hobbies.length > 0 && (
           <VStack width="100%" align="start" marginTop="3" paddingRight={5}>
-            <Text color="white">{t("HOBBIES")}</Text>
+            <Text color="theme.resumeText">{t("HOBBIES")}</Text>
             <List.Root marginLeft="5">
               {personalData.hobbies.map((hobby: string, idx: number) => (
                 <List.Item key={idx}>
-                  <Text color="white" fontSize="sm">
+                  <Text color="theme.resumeText" fontSize="sm">
                     {t(hobby)}
                   </Text>
                 </List.Item>
@@ -136,12 +139,12 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
         {/* Languages */}
         {personalData.languages.length > 0 && (
           <VStack width="100%" align="start" marginTop="3" paddingRight={5}>
-            <Text color="white">{t("LANGUAGES")}</Text>
+            <Text color="theme.resumeText">{t("LANGUAGES")}</Text>
             <List.Root width="100%" marginLeft="5">
               {personalData.languages.map((language: nameValue, idx: number) => (
                 <List.Item key={idx}>
                   <HStack width="100%" justifyContent="space-between">
-                    <Text color="white" fontSize="sm">
+                    <Text color="theme.resumeText" fontSize="sm">
                       {t(language.name)}
                     </Text>
                     <Tooltip
@@ -150,7 +153,7 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
                       openDelay={0}
                       closeDelay={100}
                     >
-                      <Text color="white" fontSize="sm">
+                      <Text color="theme.resumeText" fontSize="sm">
                         {t(determinedProficiency(language.value))}
                       </Text>
                     </Tooltip>
@@ -163,11 +166,11 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
         <Separator width="100%" variant="solid" />
         {/* Reference */}
         <VStack width="100%" align="start" marginTop="3" paddingRight={5}>
-          <Text color="white">{t("REFERENCE")}</Text>
+          <Text color="theme.resumeText">{t("REFERENCE")}</Text>
           {personalData.references.length > 0 ? (
             <Text></Text>
           ) : (
-            <Text color="white" fontSize="sm">
+            <Text color="theme.resumeText" fontSize="sm">
               {t("Available if needed.")}
             </Text>
           )}
@@ -197,7 +200,7 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
             <Text fontFamily="heading" fontSize="2xl">
               {t(personalData.last_name.toUpperCase())}
             </Text>
-            <Text color="gray" fontSize="sm">
+            <Text color="theme.textSubtle" fontSize="sm">
               {t(personalData.work_experience[0].position)}
             </Text>
           </VStack>
@@ -210,14 +213,14 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
             marginTop={!printRef ? { base: 0, md: 3 } : 3}
           >
             <HStack alignItems="start">
-              <Icon marginTop={1}>
-                <IoIosPin size={15} color="gray" />
+              <Icon marginTop={1} color="theme.textSubtle">
+                <IoIosPin size={15} />
               </Icon>
               <Text fontSize="sm">{t(personalData.address)}</Text>
             </HStack>
             <HStack>
-              <Icon>
-                <MdPhone size={15} color="gray" />
+              <Icon color="theme.textSubtle">
+                <MdPhone size={15} />
               </Icon>
               <Tooltip content="Contact me" positioning={{ placement: "bottom" }} openDelay={0} closeDelay={100}>
                 <Link
@@ -229,8 +232,8 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
               </Tooltip>
             </HStack>
             <HStack>
-              <Icon>
-                <IoIosMail size={15} color="gray" />
+              <Icon color="theme.textSubtle">
+                <IoIosMail size={15} />
               </Icon>
               <Tooltip content="Send Email" positioning={{ placement: "bottom" }} openDelay={0} closeDelay={100}>
                 <Link fontSize="sm" href={`mailto:${personalData.email}`}>
@@ -339,7 +342,7 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
                   max={100}
                   value={skill.value}
                   animated
-                  colorPalette="green"
+                  colorPalette="success"
                   variant="outline"
                   size="sm"
                   shape="rounded"
@@ -370,7 +373,7 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
                   min={0}
                   max={100}
                   value={skill.value}
-                  colorPalette="green"
+                  colorPalette="success"
                   variant="outline"
                   size="sm"
                   shape="rounded"

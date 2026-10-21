@@ -51,7 +51,7 @@ const TechStack = () => {
       {/* Header */}
       <Flex direction="column" gap={{ base: "0.5rem", lg: "0.75rem" }}>
         <Heading fontSize={{ base: "xl", md: "2xl" }}>{t("Full Tech Stack")}</Heading>
-        <Text color="secondaryTextColor">{t("Comprehensive list of tools and technologies I use.")}</Text>
+        <Text color="theme.textSubtle">{t("Comprehensive list of tools and technologies I use.")}</Text>
       </Flex>
       {/* List Item */}
       <SimpleGrid columns={12} gap="1rem" alignItems="stretch">

@@ -39,11 +39,11 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(function T
             {...contentProps}
             padding={padding}
             zIndex={9999}
-            bg="#fcfcfc"
+            bg="theme.bgCard"
             fontSize="0.875rem"
             boxShadow="lg"
             rounded="sm"
-            color="black"
+            color="theme.text"
             flexWrap="wrap"
             maxW="500px"
           >
@@ -54,8 +54,8 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(function T
                     borderWidth="5px"
                     borderRightColor="transparent"
                     borderBottomColor="transparent"
-                    borderLeftColor="#fcfcfc"
-                    borderTopColor="#fcfcfc"
+                    borderLeftColor="theme.bgCard"
+                    borderTopColor="theme.bgCard"
                   />
                 </ChakraTooltip.Arrow>
               </Float>

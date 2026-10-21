@@ -32,7 +32,7 @@ const TechStackSection = () => {
           className="group"
           cursor="pointer"
           onClick={() => navigate("/tech-stacks")}
-          _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
+          _focusVisible={{ outline: "2px solid", outlineColor: "theme.borderFocus", rounded: "sm" }}
         >
           <Text>{t("View All")}</Text>
           <Box _groupHover={{ transform: "translateX(3px)" }} _groupActive={{ transform: "translateX(3px)" }} transition="all 0.15s">

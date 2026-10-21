@@ -120,6 +120,7 @@ export const semanticTokens = defineSemanticTokens({
 
       // ─── Resume ────────────────────────────────────────────────────────────
       resumeBg: { value: { base: "{colors.resumeBg.50}", _dark: "{colors.resumeBg.100}" } },
+      resumeText: { value: "{colors.white}" },
     },
   },
 });
